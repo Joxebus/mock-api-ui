@@ -1,0 +1,11 @@
+/* Bootstrap 5 provides the base styles (imported in main.tsx).
+   Keep app-level overrides minimal. */
+
+body {
+  background-color: #f8f9fa;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
