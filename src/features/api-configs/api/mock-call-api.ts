@@ -1,5 +1,5 @@
-import { sendRaw } from '../../../services'
-import type { RawResponse } from '../../../types'
+import { sendRaw } from '@/services'
+import type { RawResponse } from '@/types'
 import type { MockRequest } from '../types/mock-call'
 
 /** Call a mock endpoint exactly as configured. Never throws on HTTP error statuses. */

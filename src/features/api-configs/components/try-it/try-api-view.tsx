@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ROUTES } from '../../../../config/routes'
+import { ROUTES } from '@/config/routes'
 import type { ApiConfiguration, EndpointConfiguration } from '../../types/api-configuration'
 import { hrefByOperation as buildHrefByOperation } from '../../utils/endpoint-hrefs'
 import { TryOperationItem } from './try-operation-item'

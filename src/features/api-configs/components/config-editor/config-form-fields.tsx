@@ -128,7 +128,7 @@ function MetadataSection({ form, errors, set }: MetadataSectionProps) {
               className="form-control"
               value={form.termsOfService}
               onChange={(e) => set({ termsOfService: e.target.value })}
-              placeholder="http://example.com/terms/"
+              placeholder="https://example.com/terms/"
             />
           </div>
 

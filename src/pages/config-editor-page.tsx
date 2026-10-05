@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom'
-import { BackWithError } from '../components/error-view'
-import { LoadingView } from '../components/loading-view'
-import { ConfigEditor, getConfiguration } from '../features/api-configs'
-import { useAsync } from '../hooks'
+import { BackWithError, LoadingView } from '@/components'
+import { ConfigEditor, getConfiguration } from '@/features/api-configs'
+import { useAsync } from '@/hooks'
 
 export function ConfigEditorPage() {
   const { apiName } = useParams()
@@ -18,5 +17,5 @@ export function ConfigEditorPage() {
   if (loading) return <LoadingView message={`Loading "${apiName}"…`} />
   if (error) return <BackWithError message={error} />
 
-  return <ConfigEditor isEdit={isEdit} initialConfig={data} />
+  return <ConfigEditor key={apiName ?? 'new'} isEdit={isEdit} initialConfig={data} />
 }

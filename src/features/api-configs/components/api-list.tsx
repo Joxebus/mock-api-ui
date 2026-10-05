@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { EmptyView } from '../../../components/empty-view'
-import { ROUTES } from '../../../config/routes'
+import { EmptyView } from '@/components'
+import { ROUTES } from '@/config/routes'
 import type { EndpointConfiguration } from '../types/api-configuration'
 import { apiNameFromConfigPath } from '../utils/api-name'
 

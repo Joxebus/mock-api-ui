@@ -17,6 +17,7 @@ export function useAsync<T>(loader: () => Promise<T>, deps: unknown[]): AsyncSta
     error: null,
   })
 
+  // oxlint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let active = true
     setState({ data: null, loading: true, error: null })
@@ -33,6 +34,7 @@ export function useAsync<T>(loader: () => Promise<T>, deps: unknown[]): AsyncSta
     return () => {
       active = false
     }
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 

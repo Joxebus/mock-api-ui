@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
-import { ROUTES } from '../config/routes'
+import { ROUTES } from '@/config/routes'
 
 export function MainLayout() {
   return (

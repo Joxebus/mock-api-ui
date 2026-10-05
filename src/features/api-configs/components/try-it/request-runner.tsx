@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react'
-import { ErrorView } from '../../../../components/error-view'
-import { BACKEND_URL } from '../../../../config/env'
+import { ErrorView } from '@/components'
+import { BACKEND_URL } from '@/config/env'
 import type { ApiPath } from '../../types/api-configuration'
 import type { MockRequest } from '../../types/mock-call'
 import { useMockCall } from '../../hooks/use-mock-call'

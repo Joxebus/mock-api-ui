@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { CodeTextarea } from '../../../../components/code-textarea'
-import type { RawResponse } from '../../../../types'
+import { CodeTextarea } from '@/components'
+import type { RawResponse } from '@/types'
 import type { ApiPath } from '../../types/api-configuration'
 import { formatBody } from '../../utils/format-body'
 import { compareResponse } from '../../utils/response-check'

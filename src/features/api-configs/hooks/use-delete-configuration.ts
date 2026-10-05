@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { errorMessage } from '../../../services'
+import { errorMessage } from '@/services'
 import { deleteConfiguration } from '../api/api-configs-api'
 
 export interface DeleteConfigurationState {

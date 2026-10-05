@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 
 interface ConfirmModalProps {
   show: boolean
@@ -27,6 +27,17 @@ export function ConfirmModal({
   onCancel,
   children,
 }: ConfirmModalProps) {
+  useEffect(() => {
+    if (!show) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !busy) {
+        onCancel()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [show, busy, onCancel])
+
   if (!show) return null
 
   return (

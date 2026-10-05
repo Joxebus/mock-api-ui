@@ -1,4 +1,4 @@
-import { ConfirmModal } from '../../../components/confirm-modal'
+import { ConfirmModal } from '@/components'
 import type { DeleteConfigurationState } from '../hooks/use-delete-configuration'
 
 interface DeleteConfigurationModalProps {
