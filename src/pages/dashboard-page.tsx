@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ErrorView } from '../components/error-view'
-import { LoadingView } from '../components/loading-view'
-import { ROUTES } from '../config/routes'
+import { ErrorView, LoadingView } from '@/components'
+import { ROUTES } from '@/config/routes'
 import {
   ApiList,
   DeleteConfigurationModal,
   listEndpoints,
   useDeleteConfiguration,
-} from '../features/api-configs'
-import { useAsync } from '../hooks'
+} from '@/features/api-configs'
+import { useAsync } from '@/hooks'
 
 export function DashboardPage() {
   const [reloadKey, setReloadKey] = useState(0)

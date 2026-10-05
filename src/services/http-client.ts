@@ -1,5 +1,5 @@
-import { API_BASE_URL } from '../config/env'
-import type { RawResponse, ResponseError } from '../types'
+import { API_BASE_URL } from '@/config/env'
+import type { RawResponse, ResponseError } from '@/types'
 
 export class ApiError extends Error {
   readonly status: number

@@ -1,15 +1,14 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { BackWithError } from '../components/error-view'
-import { LoadingView } from '../components/loading-view'
-import { ROUTES } from '../config/routes'
+import { BackWithError, LoadingView } from '@/components'
+import { ROUTES } from '@/config/routes'
 import {
   ApiDetailView,
   DeleteConfigurationModal,
   getConfiguration,
   getEndpoint,
   useDeleteConfiguration,
-} from '../features/api-configs'
-import { useAsync } from '../hooks'
+} from '@/features/api-configs'
+import { useAsync } from '@/hooks'
 
 export function ApiDetailPage() {
   const { apiName = '' } = useParams()

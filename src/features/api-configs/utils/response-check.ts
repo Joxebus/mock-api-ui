@@ -1,4 +1,4 @@
-import type { RawResponse } from '../../../types'
+import type { RawResponse } from '@/types'
 import type { ApiPath } from '../types/api-configuration'
 import type { ResponseCheck, ResponseComparison } from '../types/mock-call'
 

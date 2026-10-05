@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom'
-import { BackWithError } from '../components/error-view'
-import { LoadingView } from '../components/loading-view'
-import { getConfiguration, getEndpoint, TryApiView } from '../features/api-configs'
-import { useAsync } from '../hooks'
+import { BackWithError, LoadingView } from '@/components'
+import { getConfiguration, getEndpoint, TryApiView } from '@/features/api-configs'
+import { useAsync } from '@/hooks'
 
 export function TryApiPage() {
   const { apiName = '' } = useParams()

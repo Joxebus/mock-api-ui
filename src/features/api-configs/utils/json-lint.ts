@@ -5,7 +5,7 @@ import {
   parseJsonAst,
   toPlainValue,
   type JsonValueNode,
-} from '../../../utils'
+} from '@/utils'
 import type { ApiConfiguration } from '../types/api-configuration'
 import type { LintProblem, LintResult, LintSeverity } from '../types/json-lint'
 import { configToForm, HTTP_METHODS } from './form-model'

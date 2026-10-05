@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
-import { CodeTextarea, type LineMarker } from '../../../../components/code-textarea'
-import { useDebouncedValue } from '../../../../hooks'
+import { CodeTextarea, type LineMarker } from '@/components'
+import { useDebouncedValue } from '@/hooks'
 import type { ConfigForm } from '../../types/config-form'
 import type { LintProblem } from '../../types/json-lint'
 import { configToForm, formToConfig } from '../../utils/form-model'

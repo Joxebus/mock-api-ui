@@ -1,5 +1,5 @@
-import { getJson, request } from '../../../services'
-import type { ResponseError } from '../../../types'
+import { getJson, request } from '@/services'
+import type { ResponseError } from '@/types'
 import type { ApiConfiguration, EndpointConfiguration } from '../types/api-configuration'
 
 /** GET /endpoint — list all configured APIs. */
