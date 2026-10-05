@@ -68,12 +68,25 @@ The backend already allows the `http://localhost:5173` origin via CORS for the
 
 ## Project layout
 
+Feature-based structure (see `CLAUDE.md` for the full rules):
+
 ```
 src/
-  api/         API client (fetch) + TypeScript types mirroring the backend JSON
-  components/  Layout, shared status views (loading/error/empty), MethodBadge
-  hooks/       useAsync — load-on-mount with loading/error state
-  pages/       Dashboard, ApiDetail
-  router.tsx   route table
-  main.tsx     entry (Bootstrap CSS + RouterProvider)
+  app.tsx        root component: router + app-wide providers
+  main.tsx       entry (Bootstrap CSS + global styles + <App/>)
+  components/    generic UI with no domain knowledge (confirm-modal, loading/error/empty views)
+  config/        env.ts (typed env vars), routes.ts (route patterns + path builders)
+  features/
+    api-configs/ everything about API configurations: api/, components/, hooks/, types/, utils/
+                 import it only through features/api-configs/index.ts
+  hooks/         generic hooks (useAsync)
+  layouts/       MainLayout (navbar + <Outlet/>)
+  pages/         thin route components (dashboard, api-detail, config-editor)
+  services/      HTTP client (request, ApiError, errorMessage)
+  styles/        global CSS
+  types/         app-wide types (ResponseError, ImportMetaEnv)
 ```
+
+Conventions: kebab-case file names, named exports only, types co-located with
+the code that uses them (promoted to `features/<name>/types/` or `src/types/`
+only when shared).
