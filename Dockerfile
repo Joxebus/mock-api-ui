@@ -8,6 +8,9 @@ RUN npm ci
 
 # Build the production bundle. VITE_API_BASE_URL stays empty so the app uses
 # relative paths, which nginx proxies to the backend (see nginx.conf).
+# VITE_BACKEND_URL is only displayed to users (Copy curl): the backend as reachable
+# from their machine. Override with --build-arg if it isn't published on :8080.
+ARG VITE_BACKEND_URL=http://localhost:8080
 COPY . .
 RUN npm run build
 

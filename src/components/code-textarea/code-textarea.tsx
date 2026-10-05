@@ -9,7 +9,9 @@ export interface LineMarker {
 
 interface CodeTextareaProps {
   value: string
-  onChange: (value: string) => void
+  /** Required unless `readOnly`. */
+  onChange?: (value: string) => void
+  readOnly?: boolean
   rows?: number
   invalid?: boolean
   /** Highlights for 1-based line numbers. */
@@ -27,6 +29,7 @@ interface CodeTextareaProps {
 export function CodeTextarea({
   value,
   onChange,
+  readOnly = false,
   rows = 20,
   invalid = false,
   markers,
@@ -71,7 +74,8 @@ export function CodeTextarea({
           className="code-textarea__input"
           rows={rows}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => onChange?.(e.target.value)}
+          readOnly={readOnly}
           onScroll={(e) => {
             const { scrollTop } = e.currentTarget
             if (gutterRef.current) gutterRef.current.scrollTop = scrollTop

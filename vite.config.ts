@@ -12,6 +12,8 @@ export default defineConfig({
     proxy: {
       '/config': 'http://localhost:8080',
       '/endpoint': 'http://localhost:8080',
+      // Mock endpoints (used by "Try it"). Regex key so the SPA routes /apis/... aren't proxied.
+      '^/api/': 'http://localhost:8080',
     },
   },
 })

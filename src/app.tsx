@@ -4,6 +4,7 @@ import { MainLayout } from './layouts/main-layout'
 import { ApiDetailPage } from './pages/api-detail-page'
 import { ConfigEditorPage } from './pages/config-editor-page'
 import { DashboardPage } from './pages/dashboard-page'
+import { TryApiPage } from './pages/try-api-page'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       { path: ROUTE_PATTERNS.newApi, element: <ConfigEditorPage /> },
       { path: ROUTE_PATTERNS.editApi, element: <ConfigEditorPage /> },
       { path: ROUTE_PATTERNS.apiDetail, element: <ApiDetailPage /> },
+      { path: ROUTE_PATTERNS.tryApi, element: <TryApiPage /> },
     ],
   },
 ])
