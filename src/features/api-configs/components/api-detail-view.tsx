@@ -2,6 +2,8 @@ import { useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../../config/routes'
 import type { ApiConfiguration, ApiPath, EndpointConfiguration } from '../types/api-configuration'
+import { hrefByOperation as buildHrefByOperation } from '../utils/endpoint-hrefs'
+import { formatBody } from '../utils/format-body'
 import { MethodBadge } from './method-badge'
 
 interface ApiDetailViewProps {
@@ -12,13 +14,7 @@ interface ApiDetailViewProps {
 
 /** Read-only view of one API: metadata card plus an accordion of operations. */
 export function ApiDetailView({ config, endpointConfig, onDelete }: ApiDetailViewProps) {
-  // Map operation name -> mock href, from the endpoint discovery view.
-  const hrefByOperation = new Map<string, string>()
-  for (const ep of endpointConfig.endpoints) {
-    const operationName = ep.href.split('/').filter(Boolean).pop() ?? ''
-    hrefByOperation.set(operationName, ep.href)
-  }
-
+  const hrefByOperation = buildHrefByOperation(config.name, endpointConfig)
   const operationNames = Object.keys(config.paths)
 
   return (
@@ -43,6 +39,11 @@ export function ApiDetailView({ config, endpointConfig, onDelete }: ApiDetailVie
         )}
         {config.version && <span className="badge text-bg-light text-dark border">v{config.version}</span>}
         <div className="btn-group btn-group-sm ms-auto" role="group">
+          {operationNames.length > 0 && (
+            <Link to={ROUTES.tryApi(config.name)} className="btn btn-outline-primary">
+              ▶ Try it
+            </Link>
+          )}
           <Link to={ROUTES.editApi(config.name)} className="btn btn-outline-secondary">
             Edit
           </Link>
@@ -254,13 +255,4 @@ function OperationAccordionItem({ operationName, href, paths, open, onToggle }: 
       </div>
     </div>
   )
-}
-
-/** Pretty-print the response body if it is JSON; otherwise return it as-is. */
-function formatBody(body: string): string {
-  try {
-    return JSON.stringify(JSON.parse(body), null, 2)
-  } catch {
-    return body
-  }
 }

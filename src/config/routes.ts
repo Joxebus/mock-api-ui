@@ -5,6 +5,7 @@ export const ROUTE_PATTERNS = {
   newApi: 'apis/new',
   apiDetail: 'apis/:apiName',
   editApi: 'apis/:apiName/edit',
+  tryApi: 'apis/:apiName/try',
 } as const
 
 export const ROUTES = {
@@ -12,4 +13,5 @@ export const ROUTES = {
   newApi: '/apis/new',
   apiDetail: (apiName: string) => `/apis/${encodeURIComponent(apiName)}`,
   editApi: (apiName: string) => `/apis/${encodeURIComponent(apiName)}/edit`,
+  tryApi: (apiName: string) => `/apis/${encodeURIComponent(apiName)}/try`,
 } as const

@@ -7,6 +7,7 @@ export { ApiDetailView } from './components/api-detail-view'
 export { ApiList } from './components/api-list'
 export { ConfigEditor } from './components/config-editor/config-editor'
 export { DeleteConfigurationModal } from './components/delete-configuration-modal'
+export { TryApiView } from './components/try-it/try-api-view'
 export { useDeleteConfiguration } from './hooks/use-delete-configuration'
 export type {
   ApiConfiguration,
