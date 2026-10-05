@@ -1,0 +1,97 @@
+/* The gutter and the textarea must share font, size, line-height and top
+   padding so each number stays level with its line. */
+.code-textarea {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+
+.code-textarea:focus-within {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.code-textarea.is-invalid:focus-within {
+  border-color: var(--bs-form-invalid-border-color);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.code-textarea__gutter,
+.code-textarea__input {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.875em;
+  line-height: 1.5;
+  padding-top: 0.375rem;
+}
+
+.code-textarea__gutter {
+  flex: none;
+  min-width: 3.25em;
+  /* Extra bottom space (> textarea padding + horizontal scrollbar) so the
+     gutter can always scroll as far as the textarea. */
+  padding: 0.375rem 0.5rem 2rem;
+  overflow: hidden;
+  text-align: right;
+  color: var(--bs-secondary-color);
+  background-color: var(--bs-tertiary-bg);
+  border-right: 1px solid var(--bs-border-color);
+  user-select: none;
+}
+
+.code-textarea__line--error {
+  color: var(--bs-danger);
+  background-color: rgba(var(--bs-danger-rgb), 0.15);
+  font-weight: 600;
+}
+
+.code-textarea__line--warning {
+  color: var(--bs-warning-text-emphasis);
+  background-color: rgba(var(--bs-warning-rgb), 0.2);
+  font-weight: 600;
+}
+
+.code-textarea__editor {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+}
+
+.code-textarea__highlights {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  /* Same font-size as the textarea so 1.5em equals one text line. */
+  font-size: 0.875em;
+}
+
+.code-textarea__band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(0.375rem + (var(--line) - 1) * 1.5em);
+  height: 1.5em;
+}
+
+.code-textarea__band--error {
+  background-color: rgba(var(--bs-danger-rgb), 0.12);
+}
+
+.code-textarea__band--warning {
+  background-color: rgba(var(--bs-warning-rgb), 0.18);
+}
+
+.code-textarea__input {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.375rem 0.75rem;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  white-space: pre;
+  overflow: auto;
+  color: inherit;
+  background: transparent;
+}
