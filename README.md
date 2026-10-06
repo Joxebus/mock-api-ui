@@ -90,3 +90,19 @@ src/
 Conventions: kebab-case file names, named exports only, types co-located with
 the code that uses them (promoted to `features/<name>/types/` or `src/types/`
 only when shared).
+
+## Screenshots
+
+### 🚀 Features Preview
+
+<img src="docs/assets/img/01-mock-api-list.png" alt="Dashboard" width="100%">
+
+<details>
+    <summary><b>📸 Click to view screenshot gallery</b></summary>
+    <br>
+    <img src="docs/assets/img/02-mock-api-create-form.png" alt="Create API" width="100%">
+    <hr>
+    <img src="docs/assets/img/06-mock-api-show-view.png" alt="View API" width="100%">
+    <hr>
+    <img src="docs/assets/img/08-mock-api-try-out-reponse.png" alt="Try out API" width="100%">
+</details>
