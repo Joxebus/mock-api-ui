@@ -121,16 +121,6 @@ function MetadataSection({ form, errors, set }: MetadataSectionProps) {
               onChange={(e) => set({ description: e.target.value })}
             />
           </div>
-          <div className="col-md-6">
-            <label className="form-label">Terms of service</label>
-            <input
-              type="text"
-              className="form-control"
-              value={form.termsOfService}
-              onChange={(e) => set({ termsOfService: e.target.value })}
-              placeholder="https://example.com/terms/"
-            />
-          </div>
 
           <div className="col-md-4">
             <label className="form-label">Contact name</label>
@@ -160,7 +150,7 @@ function MetadataSection({ form, errors, set }: MetadataSectionProps) {
             />
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-4">
             <label className="form-label">License name</label>
             <input
               type="text"
@@ -170,13 +160,24 @@ function MetadataSection({ form, errors, set }: MetadataSectionProps) {
               placeholder="Apache 2.0"
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <label className="form-label">License URL</label>
             <input
-              type="text"
+              type="url"
               className="form-control"
               value={form.licenseUrl}
               onChange={(e) => set({ licenseUrl: e.target.value })}
+            />
+          </div>
+
+          <div className="col-md-4">
+            <label className="form-label">Terms of service</label>
+            <input
+                type="text"
+                className="form-control"
+                value={form.termsOfService}
+                onChange={(e) => set({ termsOfService: e.target.value })}
+                placeholder="https://example.com/terms/"
             />
           </div>
 

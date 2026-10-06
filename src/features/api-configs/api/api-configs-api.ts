@@ -1,6 +1,6 @@
 import { getJson, request } from '@/services'
 import type { ResponseError } from '@/types'
-import type { ApiConfiguration, EndpointConfiguration } from '../types/api-configuration'
+import type { ApiConfiguration, EndpointConfiguration } from '@/features/api-configs'
 
 /** GET /endpoint — list all configured APIs. */
 export function listEndpoints(): Promise<EndpointConfiguration[]> {
